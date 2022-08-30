@@ -20,24 +20,33 @@
  */
 
 var dateResult;
-var dateNoResult = "Không hợp lệ";
+var dateNoResult = `<p class='m-0 p-0 text-danger'>Không hợp lệ. Có thể bạn đã nhập sai các dữ kiện sau:</p> <br> <div class='font-weight-normal mt-0 p-0 text-left'><p><i>- Tháng = 0 hoặc > 12</i><br><i>- Ngày 31 không có trong các tháng 4, 6, 9, 11</i><br><i>- Ngày 29 trong tháng 2 không phải làm năm nhuận</i></p></div>`;
 var valid = true;
 
 const arr31 = [1, 3, 4, 7, 8, 10, 12];
 const arr30 = [4, 6, 9, 11];
+var leapFeb;
 //NGÀY HÔM SAU
 document.getElementById("btnNextDay").onclick = function () {
+  //LẤY DỮ LIỆU
   var day = document.getElementById("day").value * 1;
   var month = document.getElementById("month").value * 1;
   var year = document.getElementById("year").value * 1;
+  //CHECK NĂM NHUẬN
+  if ((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0) {
+    leapFeb = 29;
+  } else {
+    leapFeb = 28;
+  }
+  //CHECK NGÀY CÓ HỢP LỆ
   if (day <= 31 && day !== 0 && month <= 12 && month !== 0 && month !== 2) {
     valid = true;
-  } else if (day <= 28 && month == 2) {
+  } else if (day <= leapFeb && month == 2) {
     valid = true;
   } else {
     valid = false;
   }
-
+  //TÍNH TOÁN
   if (valid == true && day == 31 && month == 12) {
     day = 1;
     month = 1;
@@ -45,7 +54,7 @@ document.getElementById("btnNextDay").onclick = function () {
   } else if (valid == true && day == 31 && arr31.includes(month)) {
     day = 1;
     month += 1;
-  } else if (valid == true && day == 28 && month == 2) {
+  } else if (valid == true && day == leapFeb && month == 2) {
     day = 1;
     month += 1;
   } else if (valid == true && day == 30 && arr30.includes(month)) {
@@ -75,17 +84,25 @@ document.getElementById("btnNextDay").onclick = function () {
 };
 //NGÀY HÔM TRƯỚC
 document.getElementById("btnPreDay").onclick = function () {
+  // NHẬP DỮ LIỆU
   var day = document.getElementById("day").value * 1;
   var month = document.getElementById("month").value * 1;
   var year = document.getElementById("year").value * 1;
+  //CHECK NĂM NHUẬN
+  if ((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0) {
+    leapFeb = 29;
+  } else {
+    leapFeb = 28;
+  }
+  //TÍNH TOÁN
   if (day <= 31 && day !== 0 && month <= 12 && month !== 0 && month !== 2) {
     valid = true;
-  } else if (day <= 28 && month == 2) {
+  } else if (day <= leapFeb && month == 2) {
     valid = true;
   } else {
     valid = false;
   }
-
+  //TÍNH TOÁN
   if (valid == true && month == 8) {
     day = 31;
     month -= 1;
@@ -98,7 +115,7 @@ document.getElementById("btnPreDay").onclick = function () {
     day = 30;
     month -= 1;
   } else if (valid == true && day == 1 && month == 3) {
-    day = 28;
+    day = leapFeb;
     month -= 1;
   } else if (valid == true && day == 1 && arr30.includes(month)) {
     day = 31;

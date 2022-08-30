@@ -150,9 +150,15 @@
               </div>
               <div
                 id="dateResult"
-                class="card-footer text-muted py-4 mt-4 font-weight-bold"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
               ></div>
             </div>
+            <p class="mt-5">
+              <i
+                >*Bài này em nhận thấy logic làm của mình chưa được tối ưu, nhờ
+                mentor commment hướng giải quyết tốt hơn</i
+              >
+            </p>
           </div>
         </div>
         <!-- BÀI 2 -->
@@ -163,33 +169,43 @@
           aria-labelledby="pills-home-tab"
         >
           <h1>BÀI 2</h1>
-          <p>Gửi lời chào đến người đang sử dụng máy</p>
+          <p>Tính ngày</p>
           <div class="container w-75 mt-3 text-center">
             <div class="card">
               <div class="card-header text-danger font-weight-bold">
-                GỬI LỜI CHÀO ĐẾN NGƯỜI DÙNG
+                NHẬP VÀO THÁNG VÀ NĂM BẠN CẦN TÍNH NGÀY
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="card-body px-0">
+                  <label>THÁNG: </label>
+                  <input
+                    id="monthB2"
+                    type="number"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+                <div class="card-body px-0">
+                  <label>NĂM: </label>
+                  <input
+                    id="yearB2"
+                    type="number"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnCountDay"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  TÍNH
+                </button>
               </div>
 
-              <div class="card-body">
-                <label>Ai đang sử dụng máy thế? </label>
-                <select id="user">
-                  <option value="none">Chọn thành viên</option>
-                  <option value="ba">Ba</option>
-                  <option value="me">Mẹ</option>
-                  <option value="anh">Anh Trai</option>
-                  <option value="em">Em Gái</option>
-                </select>
-                <button
-                  id="btnHello"
-                  class="bg-success text-white w-50 mx-auto p-3 my-5 rounded d-block"
-                >
-                  GỬI LỜI CHÀO
-                </button>
-                <div
-                  id="helloZone"
-                  class="card-footer text-muted py-4 font-weight-bold"
-                ></div>
-              </div>
+              <div
+                id="dateResultB2"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
+              ></div>
             </div>
           </div>
         </div>
@@ -201,46 +217,35 @@
           aria-labelledby="pills-home-tab"
         >
           <h1>BÀI 3</h1>
-          <p>Đếm số có bao nhiêu số chẵn và bao nhiêu số lẻ</p>
+          <p>Đọc số nguyên có 3 chữ số</p>
           <div class="container w-75 mt-3 text-center">
             <div class="card">
               <div class="card-header text-danger font-weight-bold">
-                HÃY CHO BA SỐ TỰ NHIÊN KHÁC NHAU
+                NHẬP VÀO SỐ NGUYÊN CÓ 3 CHỮ SỐ
+              </div>
+              <div class="w-50 mx-auto">
+                <div class="card-body px-0">
+                  <label>SỐ: </label>
+                  <input
+                    id="numB3"
+                    type="number"
+                    placeholder="Vd: 123"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnRead"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  TÍNH
+                </button>
               </div>
 
-              <div class="card-body">
-                <label>Nhập số tự nhiên thứ 1: </label>
-                <input
-                  id="int1"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <div class="card-body">
-                <label>Nhập số tự nhiên thứ 2: </label>
-                <input
-                  id="int2"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <div class="card-body">
-                <label>Nhập số tự nhiên thứ 3: </label>
-                <input
-                  id="int3"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <button
-                id="btnCount"
-                class="bg-success text-white w-25 m-auto p-2 rounded"
-              >
-                ĐẾM !!!
-              </button>
               <div
-                id="countDone"
-                class="card-footer text-muted py-4 mt-4 font-weight-bold"
+                id="resultB3"
+                class="card-footer py-4 mt-4 font-weight-bold mb-0 text-danger"
               ></div>
             </div>
           </div>

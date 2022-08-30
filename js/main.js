@@ -214,15 +214,24 @@ document.getElementById("btnRead").onclick = function () {
   //Hàng chục
   if (numT == 0) {
     numT = "lẻ ";
+  } else if (numT == 1) {
+    numT = "mười ";
   } else {
     numT = numTransArray[numT - 1] + " mươi";
   }
   //Hàng đơn vị
+
   if (numU == 0) {
     numU = "";
+  } else if (numU == 5) {
+    numU = " lăm";
+  } else if (numT !== "mười ") {
+    numU = " mốt";
   } else {
     numU = numTransArray[numU - 1];
   }
+  console.log(numT);
+  console.log(numT !== "mười ");
   //DOM kết quả
   document.getElementById(
     "resultB3"

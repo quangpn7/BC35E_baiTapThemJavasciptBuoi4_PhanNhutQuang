@@ -211,3 +211,64 @@ document.getElementById("btnRead").onclick = function () {
     "resultB3"
   ).innerHTML = `<span class='text-capitalize'>${numH}</span> trăm ${numT} ${numU}`;
 };
+
+/**BÀI 4: TÌM SINH VIÊN XA TRƯỜNG NHẤT
+ * - GIẢ SỬ: Người dùng nhập vào tên và toạ độ của 3 sinh viên, máy sẽ trả về sinh viên ở xa trường nhất. (Toạ độ của tường người dùng tự nhập vào)
+ * - ĐẦU VÀO: Người dùng nhập vào đầy đủ các dữ kiện sau:
+ * + Tên sv1, toạ độ x sv1, toạ độ y sv1
+ * + Tên sv2, toạ độ x sv2, toạ độ y sv2
+ * + Tên sv3, toạ độ x sv3, toạ độ y sv3
+ * + Toạ độ trường x và y
+ * + Tạo 3 biến khoảng cách của từng sinh viên đến trường (3 biến)
+ * - XỬ LÝ:
+ * 1. Tính khoảng cách của từng sinh viên tới trường
+ * 2. Áp dụng công thức toán học độ dài đoạn thẳng bằng căng bậc 2 tổng bình phương của 2 đoạn thẳng (dựa theo toạ độ)
+ * 3. So sánh 3 đoạn thẳng đó với nhau để tìm ra sinh viên nào xa trường nhất
+ */
+
+document.getElementById("btnDistance").onclick = function () {
+  //STUDENT 1
+  var nameSt1 = document.getElementById("nameSt1").value;
+  var xSt1 = document.getElementById("xSt1").value * 1;
+
+  var ySt1 = document.getElementById("ySt1").value * 1;
+  //STUDENT 2
+  var nameSt2 = document.getElementById("nameSt2").value;
+  var xSt2 = document.getElementById("xSt2").value * 1;
+  var ySt2 = document.getElementById("ySt2").value * 1;
+  //STUDENT 3
+  var nameSt3 = document.getElementById("nameSt3").value;
+  var xSt3 = document.getElementById("xSt3").value * 1;
+  var ySt3 = document.getElementById("ySt3").value * 1;
+  //SCHOOL LOCATION
+  var xSchool = document.getElementById("xSchool").value * 1;
+  var ySchool = document.getElementById("ySchool").value * 1;
+  //Distance to school
+  //Student1
+  var std1Distance = Math.sqrt(
+    Math.pow(xSchool - xSt1, 2) + Math.pow(ySchool - ySt1, 2)
+  );
+  //Student2
+  var std2Distance = Math.sqrt(
+    Math.pow(xSchool - xSt2, 2) + Math.pow(ySchool - ySt2, 2)
+  );
+  //Student3
+  var std3Distance = Math.sqrt(
+    Math.pow(xSchool - xSt3, 2) + Math.pow(ySchool - ySt3, 2)
+  );
+
+  console.log(std1Distance, std2Distance, std3Distance);
+
+  var maxDistance;
+  if (std1Distance > std2Distance && std1Distance > std3Distance) {
+    maxDistance = nameSt1;
+  } else if (std2Distance > std1Distance && std2Distance > std3Distance) {
+    maxDistance = nameSt2;
+  } else {
+    maxDistance = nameSt3;
+  }
+
+  document.getElementById(
+    "distanceResult"
+  ).innerHTML = `<p class='mb-0'>Sinh viên xa trường nhất là bạn <span class='text-danger font-weight-bold'>${maxDistance}</span> </p>`;
+};

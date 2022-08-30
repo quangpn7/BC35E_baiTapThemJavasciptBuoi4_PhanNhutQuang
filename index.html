@@ -156,7 +156,7 @@
             <p class="mt-5">
               <i
                 >*Bài này em nhận thấy logic làm của mình chưa được tối ưu, nhờ
-                mentor commment hướng giải quyết tốt hơn</i
+                mentor comment hướng giải quyết tốt hơn</i
               >
             </p>
           </div>
@@ -258,46 +258,131 @@
           aria-labelledby="pills-home-tab"
         >
           <h1>BÀI 4</h1>
-          <p>Đây là tam giác gì?</p>
-          <div class="container w-75 mt-3 text-center">
+          <p>Tìm sinh viên xa trường nhất</p>
+          <div class="container w-100 mt-3 text-center">
             <div class="card">
               <div class="card-header text-danger font-weight-bold">
-                HÃY CHO CHIỀU DÀI 3 CẠNH CỦA MỘT TAM GIÁC
+                Nhập vào các dữ kiện sau:
+              </div>
+              <!-- Sinh viên 1 -->
+              <div class="sv_1">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 1</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt1"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt1"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt1"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Sinh viên 2 -->
+              <div class="sv_2">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 2</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt2"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt2"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt2"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Sinh viên 3 -->
+              <div class="sv_3">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 3</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt3"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt3"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt3"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Toạ độ của trường -->
+              <div class="school_index">
+                <p class="m-0 mt-3 font-weight-bold">Tạo độ của trường</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-center align-items-center w-25"
+                    style="gap: 10px"
+                  >
+                    <label class="mb-0 mr-2">X: </label>
+                    <input
+                      id="xSchool"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0 mr-2">Y: </label>
+                    <input
+                      id="ySchool"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnDistance"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  RUN
+                </button>
               </div>
 
-              <div class="card-body">
-                <label>Cạnh thứ 1: </label>
-                <input
-                  id="len1"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <div class="card-body">
-                <label>Cạnh thứ 2: </label>
-                <input
-                  id="len2"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <div class="card-body">
-                <label>Cạnh thứ 3: </label>
-                <input
-                  id="len3"
-                  type="number"
-                  class="form-control d-inline w-25"
-                />
-              </div>
-              <button
-                id="btnTria"
-                class="bg-success text-white w-25 m-auto p-2 rounded"
-              >
-                RUN
-              </button>
               <div
-                id="triaResult"
-                class="card-footer text-muted py-4 mt-4 font-weight-bold"
+                id="distanceResult"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
               ></div>
             </div>
           </div>

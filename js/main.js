@@ -108,6 +108,9 @@ document.getElementById("btnPreDay").onclick = function () {
     day = 31;
     month = 12;
     year -= 1;
+  } else if (valid == true && month == 8 && day == 1) {
+    day = 31;
+    month -= 1;
   } else if (valid == true && day == 1 && arr31.includes(month)) {
     day = 30;
     month -= 1;

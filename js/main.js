@@ -103,10 +103,7 @@ document.getElementById("btnPreDay").onclick = function () {
     valid = false;
   }
   //TÍNH TOÁN
-  if (valid == true && month == 8) {
-    day = 31;
-    month -= 1;
-  }
+
   if (valid == true && day == 1 && month == 1) {
     day = 31;
     month = 12;
